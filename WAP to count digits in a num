@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    long long num;
+    int count = 0;
+
+    // Prompt the user for an integer
+    printf("Enter an integer: ");
+    scanf("%lld", &num);
+
+    // Handle the special case where the number is 0
+    if (num == 0) {
+        count = 1;
+    } else {
+        // Loop until the number is reduced to 0
+        while (num != 0) {
+            num /= 10; // Remove the last digit
+            count++;   // Increment the digit count
+        }
+    }
+
+    printf("Number of digits: %d\n", count);
+
+    return 0;
+}
